@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta
+      name="description"
+      content="Ravi Kothari portfolio: machine learning systems, GPU acceleration, medical AI, and applied AI engineering."
+    >
+    <title>Portfolio | Ravi Kothari</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@700&family=Source+Sans+3:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    >
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <div class="page-shell">
+      <aside class="profile">
+        <h1>Ravi Kothari</h1>
+        <img class="profile-photo" src="Ravi.png" alt="Portrait of Ravi Kothari">
+
+        <nav class="profile-links" aria-label="Profile links">
+          <a href="#contact">Contact</a>
+          <span>|</span>
+          <a href="https://www.linkedin.com/in/ravi-kot/" target="_blank" rel="noreferrer">LinkedIn</a>
+          <span>|</span>
+          <a href="https://github.com/ravi-kot" target="_blank" rel="noreferrer">GitHub</a>
+        </nav>
+
+        <p>
+          I am pursuing my Master's in Computer Engineering at USC, specializing in Machine Learning.
+        </p>
+        <p>
+          I build AI systems with a systems engineer's discipline: faster inference, cleaner
+          pipelines, measurable reliability, and models that are ready to leave the lab.
+        </p>
+        <p>
+          My work spans GPU acceleration, medical vision, reinforcement learning, GenAI applications,
+          and infrastructure for production ML.
+        </p>
+      </aside>
+
+      <main class="portfolio">
+        <header class="portfolio-header">
+          <h2>Portfolio</h2>
+          <p>
+            Focused work in machine learning systems, high-performance AI, and research-backed
+            product engineering.
+          </p>
+        </header>
+
+        <section class="portfolio-section" id="intro">
+          <h3>Summary</h3>
+          <p>
+            I like hard problems with clear evidence. Give me a model, a bottleneck, or a messy
+            pipeline, and I will turn it into something faster, cleaner, and easier to trust.
+          </p>
+        </section>
+
+        <section class="portfolio-section" id="research">
+          <h3>Research and Engineering Experience</h3>
+
+          <article class="entry">
+            <h4>Software Engineering Researcher, USC Information Sciences Institute</h4>
+            <p class="entry-meta">August 2025 - Present | Los Angeles, California</p>
+            <p>
+              Implemented an AlphaZero-style MCTS and dual-head ResNet for 9x9 Go, with self-play
+              training, replay buffers, augmentation, CSV logging, FP16 mixed precision, and 32-way
+              batched MCTS leaf evaluation.
+            </p>
+          </article>
+
+          <article class="entry">
+            <h4>Graduate AI Researcher, USC Big Data in Bio-transport Centre</h4>
+            <p class="entry-meta">March 2025 - Present | Los Angeles, California</p>
+            <p>
+              Secured $50K seed funding for an early diabetes diagnostics pipeline using retinal
+              images. Trained Vision Transformer models reaching 97.3 Dice and 0.94 IoU, with SHAP
+              and Grad-CAM interpretability across clinical cases.
+            </p>
+          </article>
+
+          <article class="entry">
+            <h4>Machine Learning Systems Intern, Indian Oil Corporation Ltd.</h4>
+            <p class="entry-meta">June 2023 - October 2023 | Mumbai, India</p>
+            <p>
+              Built TensorFlow-based steel surface defect detection models reaching 99.2% accuracy,
+              improved CNN training efficiency, and integrated cloud-ready CI/CD workflows for
+              industrial deployment.
+            </p>
+          </article>
+        </section>
+
+        <section class="portfolio-section" id="projects">
+          <h3>Selected Projects</h3>
+
+          <article class="entry">
+            <h4>GPU AI Workload Orchestrator</h4>
+            <p>
+              FastAPI control plane for GPU jobs with scheduling, worker health, retries, quarantine,
+              audit logs, Prometheus metrics, alerts, and Grafana observability.
+              <a href="https://github.com/ravi-kot/GPU-Orchestrator" target="_blank" rel="noreferrer">GitHub</a>
+            </p>
+          </article>
+
+          <article class="entry">
+            <h4>GPU-Optimized Neural Reinforcement Learning</h4>
+            <p>
+              AlphaZero-style self-play pipeline using MCTS, a dual-head ResNet, replay buffers,
+              mixed precision, and batched GPU evaluation for scalable training.
+              <a href="https://github.com/ravi-kot/Neural-Network-Reinforcement-Learning-using-GPU-opitmization" target="_blank" rel="noreferrer">GitHub</a>
+            </p>
+          </article>
+
+          <article class="entry">
+            <h4>Financial Risk Copilot</h4>
+            <p>
+              Neurosymbolic SEC filing intelligence pipeline for explainable financial risk alerts,
+              designed for traceable analysis and decision-ready reporting.
+              <a href="https://github.com/ravi-kot/financial-risk-copilot" target="_blank" rel="noreferrer">GitHub</a>
+            </p>
+          </article>
+
+          <article class="entry">
+            <h4>High-Speed Cloud File Transfer Protocol</h4>
+            <p>
+              Hybrid UDP/TCP file transfer system improving throughput under high RTT and packet
+              loss using selective retransmission, caching, non-blocking sockets, and netem sweeps.
+              <a href="https://github.com/ravi-kot/High-Speed-Cloud-File-Transfer-" target="_blank" rel="noreferrer">GitHub</a>
+            </p>
+          </article>
+
+          <article class="entry">
+            <h4>TCP Congestion Control and Linux Kernel Optimization</h4>
+            <p>
+              Custom congestion-window experiments that improved throughput in high-latency,
+              high-loss environments with reproducible GCP, tc/netem, and iperf3 benchmarks.
+              <a href="https://github.com/ravi-kot/TCP-Congestion-Control-and-Linux-Kernel-Optimization" target="_blank" rel="noreferrer">GitHub</a>
+            </p>
+          </article>
+
+          <article class="entry">
+            <h4>AI Book Recommender</h4>
+            <p>
+              LLM recommender using LangChain, ChromaDB, OpenAI embeddings, sentiment analysis, and
+              Gradio deployment for fast semantic discovery across thousands of books.
+              <a href="https://github.com/ravi-kot/Book_Recommender_AI" target="_blank" rel="noreferrer">GitHub</a>
+            </p>
+          </article>
+
+          <article class="entry">
+            <h4>Image Super Resolution</h4>
+            <p>
+              Benchmarked CNNs, autoencoders, and GANs on DIV2K with PSNR, SSIM, perceptual quality,
+              and inference-time comparisons.
+              <a href="https://github.com/ravi-kot/Super-Resolution-Image-Transformation-using-Deep-Learning" target="_blank" rel="noreferrer">GitHub</a>
+            </p>
+          </article>
+
+          <article class="entry">
+            <h4>Alzheimer's Disease Prediction</h4>
+            <p>
+              Computer vision capstone detecting progressive Alzheimer's stages from MRI data with
+              AlexNet, CNN baselines, and classical ML comparisons.
+              <a href="https://github.com/ravi-kot/Alzheimer-s-Disease-prediction" target="_blank" rel="noreferrer">GitHub</a>
+            </p>
+          </article>
+        </section>
+
+        <section class="portfolio-section" id="more-work">
+          <h3>Additional Public Work</h3>
+          <p class="repo-list">
+            <a href="https://github.com/ravi-kot/BenchSight" target="_blank" rel="noreferrer">BenchSight</a>
+            <span>/</span>
+            <a href="https://github.com/ravi-kot/operator-profiler" target="_blank" rel="noreferrer">Operator Profiler</a>
+            <span>/</span>
+            <a href="https://github.com/ravi-kot/KAN_MedViT-" target="_blank" rel="noreferrer">KAN MedViT</a>
+            <span>/</span>
+            <a href="https://github.com/ravi-kot/AI-Revenue-Agent" target="_blank" rel="noreferrer">AI Revenue Agent</a>
+            <span>/</span>
+            <a href="https://github.com/ravi-kot/CUDA-Performance-Modelling-and-Micro-Benchmark-Suite-" target="_blank" rel="noreferrer">CUDA Performance Suite</a>
+            <span>/</span>
+            <a href="https://github.com/ravi-kot/High-Performance-General-Matrix-Multiplication-" target="_blank" rel="noreferrer">High-Performance GEMM</a>
+            <span>/</span>
+            <a href="https://github.com/ravi-kot/GenAI-Chatbot" target="_blank" rel="noreferrer">GenAI Chatbot</a>
+          </p>
+        </section>
+
+        <section class="portfolio-section" id="skills">
+          <h3>Skills</h3>
+          <p>
+            <strong>Languages:</strong> Python, C, C++, Java, SQL, R, Node.js, Django.
+          </p>
+          <p>
+            <strong>AI and ML:</strong> PyTorch, TensorFlow, Keras, Scikit-learn, OpenCV, NLP,
+            LangChain, LLM APIs, SHAP, Grad-CAM.
+          </p>
+          <p>
+            <strong>Systems:</strong> CUDA, cuDNN, TensorRT, ONNX Runtime, FastAPI, Docker, MLflow,
+            CI/CD, GitLab, Prometheus, Grafana.
+          </p>
+        </section>
+
+        <section class="portfolio-section contact" id="contact">
+          <h3>Contact</h3>
+          <p>
+            I am open to research, engineering, and applied AI opportunities where careful systems
+            work can create measurable impact.
+          </p>
+          <p>
+            Email:
+            <a href="mailto:ravikot0202@gmail.com">ravikot0202@gmail.com</a>
+            /
+            <a href="mailto:rmkothar@usc.edu">rmkothar@usc.edu</a>
+          </p>
+          <p>
+            Links:
+            <a href="https://www.linkedin.com/in/ravi-kot/" target="_blank" rel="noreferrer">LinkedIn</a>
+            /
+            <a href="https://github.com/ravi-kot" target="_blank" rel="noreferrer">GitHub</a>
+            /
+            <a href="https://www.youtube.com/@RaviKothari-convergent" target="_blank" rel="noreferrer">YouTube</a>
+          </p>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>
