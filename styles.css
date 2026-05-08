@@ -37,13 +37,23 @@ a:focus-visible {
   text-underline-offset: 3px;
 }
 
+.top-link {
+  padding: 16px 24px 0;
+  text-align: center;
+  font-size: 0.95rem;
+}
+
+.top-link a {
+  color: var(--muted);
+}
+
 .page-shell {
   display: grid;
   grid-template-columns: 300px minmax(0, 1fr);
   gap: 62px;
   width: min(100% - 48px, 900px);
   margin: 0 auto;
-  padding: 64px 0 80px;
+  padding: 40px 0 80px;
 }
 
 .profile {
@@ -162,7 +172,7 @@ strong {
     grid-template-columns: 1fr;
     gap: 34px;
     width: min(100% - 34px, 620px);
-    padding-top: 36px;
+    padding-top: 28px;
   }
 
   .profile p {

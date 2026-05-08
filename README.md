@@ -1,21 +1,31 @@
 # Ravi Kothari Portfolio
 
-Static GitHub Pages portfolio for `ravi-kot/portfolio`.
+Live site: https://ravi-kot.github.io/portfolio/
+
+A minimal GitHub Pages portfolio for Ravi Kothari, focused on machine learning systems, GPU-aware
+AI engineering, medical vision, and research-backed product work.
+
+## About
+
+This site is designed to be clean, direct, and easy to maintain. It highlights selected research,
+engineering experience, public projects, skills, and contact information in a lightweight static
+format.
+
+## Stack
+
+- HTML
+- CSS
+- GitHub Pages
 
 ## Files
 
-- `index.html` - portfolio content and structure
-- `styles.css` - clean responsive styling
-- `Ravi.png` - hero portrait/icon
+- `index.html` - page structure and portfolio content
+- `styles.css` - styling and responsive layout
+- `Ravi.png` - profile image
 
-## GitHub Pages
+## Deployment
 
-Use the `main` branch and publish from the repository root.
+GitHub Pages is configured to publish from the `main` branch and the repository root.
 
-The site URL for this repository will be:
-
-```text
-https://ravi-kot.github.io/portfolio/
-```
-
-For the root user-site URL, rename or create the repository as `ravi-kot.github.io`.
+If you want the shorter root URL `https://ravi-kot.github.io/`, the repository name must be
+`ravi-kot.github.io`.
