@@ -1,239 +1,517 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta
-      name="description"
-      content="Ravi Kothari portfolio: machine learning systems, GPU acceleration, medical AI, and applied AI engineering."
-    >
-    <title>Portfolio | Ravi Kothari</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@700&family=Source+Sans+3:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    >
-    <link rel="stylesheet" href="styles.css">
-  </head>
-  <body>
-    <div class="top-link">
-      <a href="https://ravi-kot.github.io/portfolio/" target="_blank" rel="noreferrer">
-        https://ravi-kot.github.io/portfolio/
-      </a>
-    </div>
 
-    <div class="page-shell">
-      <aside class="profile">
-        <h1>Ravi Kothari</h1>
-        <img class="profile-photo" src="Ravi.png" alt="Portrait of Ravi Kothari">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description"
+    content="Ravi Kothari - ML Engineer and AI Research Engineer specializing in computer vision, ML systems, and GPU-accelerated inference.">
+  <title>Ravi Kothari | ML Engineer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
 
-        <nav class="profile-links" aria-label="Profile links">
-          <a href="#contact">Contact</a>
-          <span>|</span>
-          <a href="https://www.linkedin.com/in/ravi-kot/" target="_blank" rel="noreferrer">LinkedIn</a>
-          <span>|</span>
-          <a href="https://github.com/ravi-kot" target="_blank" rel="noreferrer">GitHub</a>
-          <span>|</span>
-          <a href="https://www.youtube.com/@RaviKothari-convergent" target="_blank" rel="noreferrer">YouTube</a>
-        </nav>
+<body>
+  <div class="page-shell">
+    <aside class="profile">
+      <h1>Ravi Kothari</h1>
+      <img class="profile-photo" src="Ravi.png" alt="Portrait of Ravi Kothari">
 
-        <p>
-          I am pursuing my Master's in Computer Engineering at USC, with a focus on machine learning
-          and AI systems.
+      <nav class="profile-links" aria-label="Profile links">
+        <a href="Ravi_Kothari_Resume.pdf" target="_blank" rel="noreferrer">Resume</a>
+        <span>|</span>
+        <a href="https://www.linkedin.com/in/ravi-kot/" target="_blank" rel="noreferrer">LinkedIn</a>
+        <span>|</span>
+        <a href="https://github.com/ravi-kot" target="_blank" rel="noreferrer">GitHub</a>
+        <span>|</span>
+        <a href="https://www.youtube.com/@RaviKothari-convergent" target="_blank" rel="noreferrer">YouTube</a>
+      </nav>
+
+      <div class="education-section">
+        <h3>Education</h3>
+        <div class="education-item">
+          <p class="degree">M.S. Computer Engineering</p>
+          <p class="school">University of Southern California</p>
+          <p class="date">2024 – Present</p>
+        </div>
+        <div class="education-item">
+          <p class="degree">B.Tech. Computer Engineering</p>
+          <p class="school">MIT Pune, India</p>
+          <p class="date">2021 – 2024</p>
+        </div>
+      </div>
+    </aside>
+
+    <main class="portfolio">
+      <header class="portfolio-header">
+        <p class="headline-role">Machine Learning Engineer · AI Research Engineer</p>
+        <h2>Hi, I'm Ravi Kothari</h2>
+        <p class="about-text">
+          I build machine learning systems that work reliably in the real world. My focus is on computer vision, 
+          model evaluation, GPU-accelerated inference, and making ML systems that know when they don't know.
         </p>
-        <p>
-          I am currently a Graduate Researcher at USC ISI. Working on deterministic and controllable alternatives to conventional neural networks
-          for supervised function approximation. 
+        <p class="about-text">
+          Currently at USC, I'm researching how to make vision classifiers more reliable by building systems that 
+          can reject weak predictions instead of always forcing an answer. I also work on medical imaging pipelines 
+          where explainability and cross-hospital generalization matter.
         </p>
-        <p>
-          My work spans GPU acceleration, medical vision, reinforcement learning, and applied GenAI,
-          with an emphasis on technical depth, measurable results, and clean execution.
+        <p class="about-text">
+          Before grad school, I built production ML systems for industrial quality control at Indian Oil Corporation, 
+          processing thousands of steel surface images daily.
         </p>
-      </aside>
+      </header>
 
-      <main class="portfolio">
-        <header class="portfolio-header">
-          <h2>Portfolio</h2>
-          <p>
-            Focused work in machine learning systems, high-performance AI, and research-backed
-            product engineering.
+      <section class="portfolio-section">
+        <h3>Experience</h3>
+
+        <article class="experience">
+          <h4>AI Research Engineer — Reliable Vision Classifiers</h4>
+          <p class="experience-meta">USC Information Sciences Institute | August 2025 – Present | Los Angeles, CA</p>
+          
+          <p class="experience-summary">
+            Building classifier systems that know when to say "I don't know" instead of forcing a wrong answer.
           </p>
-        </header>
 
-        <section class="portfolio-section" id="intro">
-          <h3>Summary</h3>
-          <p>
-            My strongest work is at the intersection of ML research and systems execution. I like problems where the answer is not only a better model, but a better way to measure, trust, accelerate ML pipelines.
+          <ul class="experience-bullets">
+            <li><strong>Problem:</strong> Standard image classifiers always output a prediction, even when the input is 
+            ambiguous or unlike anything seen in training. This leads to confident but wrong answers.</li>
+            <li><strong>What I built:</strong> A support-aware classifier head that checks whether a prediction is backed 
+            by consistent evidence in the image embedding before committing to an answer. If the evidence is weak, the 
+            system rejects the prediction rather than guessing.</li>
+            <li><strong>Key result:</strong> On traffic sign classification, reduced false accepts on unseen inputs from 
+            16.14% to 0.37% while improving accuracy from 84.99% to 85.49%.</li>
+            <li><strong>Why it matters:</strong> In safety-critical applications like autonomous driving or medical diagnosis, 
+            a classifier that admits uncertainty is more useful than one that confidently guesses wrong.</li>
+          </ul>
+
+          <details class="tech-details">
+            <summary>Technical Details</summary>
+            <div class="details-content">
+              <p><strong>Approach:</strong> Instead of training a standard neural network classifier head with gradient descent, 
+              I built a scoring system directly from frozen image embeddings. The method groups embedding dimensions that 
+              consistently activate together for each class, then checks whether a new input matches these patterns strongly 
+              enough to trust the prediction.</p>
+              
+              <p><strong>Deployment version:</strong> The full scoring method is interpretable but slow. I distilled it into 
+              a single matrix multiplication using closed-form ridge regression, making it as fast as a standard classifier 
+              while preserving the reliability behavior.</p>
+
+              <div class="metrics-grid">
+                <div class="metric-card">
+                  <span class="metric-value">96.08%</span>
+                  <span class="metric-label">Accuracy (Caltech101)</span>
+                </div>
+                <div class="metric-card">
+                  <span class="metric-value">0.37%</span>
+                  <span class="metric-label">False Accept Rate</span>
+                </div>
+                <div class="metric-card">
+                  <span class="metric-value">1.08×</span>
+                  <span class="metric-label">Faster than baseline</span>
+                </div>
+                <div class="metric-card">
+                  <span class="metric-value">4</span>
+                  <span class="metric-label">Datasets evaluated</span>
+                </div>
+              </div>
+
+              <p><strong>Datasets:</strong> Evaluated on Caltech101 (101 object categories, 867 test images), GTSRB (German 
+              traffic signs, 12,630 test images, 43 classes), FGVC-Aircraft (aircraft variants, 3,333 test images), and 
+              CIFAR-100 (100 object classes, 10,000 test images).</p>
+
+              <p><strong>Evaluation metrics:</strong> Top-1 accuracy, accepted-wrong count at 95% coverage, false positive 
+              rate on out-of-distribution inputs (FPR95), area under risk-coverage curve, head latency, and memory footprint.</p>
+
+              <p><strong>Engineering:</strong> Built Python evaluation pipelines with validation-calibrated thresholds. 
+              Exported C/CUDA inference runtimes for reproducible benchmarking. Created interactive dashboard for 
+              comparing predictions between standard and support-aware classifiers.</p>
+
+              <p><strong>Limitations:</strong> The method works best when the backbone produces well-separated embeddings. 
+              On CIFAR-100 where embeddings overlap more, gains were smaller. Next step is integrating reliability scores 
+              into backbone fine-tuning.</p>
+            </div>
+          </details>
+
+          <div class="tech-tags">
+            <span>PyTorch</span>
+            <span>Computer Vision</span>
+            <span>Model Reliability</span>
+            <span>C/CUDA</span>
+            <span>Evaluation Systems</span>
+          </div>
+        </article>
+
+        <article class="experience">
+          <h4>ML Research Engineer — Medical Imaging Pipeline</h4>
+          <p class="experience-meta">USC Big Data in Bio-transport Centre | March 2025 – Present | Los Angeles, CA</p>
+          
+          <p class="experience-summary">
+            Building an AI system that analyzes retinal images for early disease detection, with results that doctors can verify.
           </p>
-        </section>
 
-        <section class="portfolio-section" id="research">
-          <h3>Research and Engineering Experience</h3>
+          <ul class="experience-bullets">
+            <li><strong>Problem:</strong> Retinal images can reveal early signs of diabetes and glaucoma, but AI systems 
+            often fail when images come from different hospitals with different cameras. Doctors also need to understand 
+            why the AI flagged something.</li>
+            <li><strong>What I built:</strong> A three-stage pipeline: (1) locate the optic disc landmark in the image, 
+            (2) segment its precise boundary, and (3) classify disease type with visual explanations showing which 
+            image regions influenced the decision.</li>
+            <li><strong>Key result:</strong> The segmentation model maintains 94-97% accuracy when tested on hospital 
+            datasets it was never trained on — critical for real-world deployment where every hospital's images look different.</li>
+            <li><strong>Why it matters:</strong> Secured $50K seed funding. A system that generalizes across hospitals 
+            and shows its reasoning is more likely to be trusted and adopted by clinicians.</li>
+          </ul>
 
-          <article class="entry">
-            <h4>Software Engineering Researcher, USC Information Sciences Institute</h4>
-            <p class="entry-meta">August 2025 - Present | Los Angeles, California</p>
-            <p>
-              Implemented an AlphaZero-style MCTS and dual-head ResNet for 9x9 Go, with self-play
-              training, replay buffers, augmentation, CSV logging, FP16 mixed precision, and 32-way
-              batched MCTS leaf evaluation.
-            </p>
-          </article>
+          <details class="tech-details">
+            <summary>Technical Details</summary>
+            <div class="details-content">
+              <p><strong>Architecture (ViT-WaveCAM):</strong> A 3.42M-parameter segmentation model combining vision transformer 
+              attention blocks with wavelet decomposition for preserving fine boundary details. The model learns a spatial 
+              prior for where the optic disc typically appears, helping it focus on the right region.</p>
+              
+              <p><strong>Pipeline stages:</strong></p>
+              <ul>
+                <li>Stage 1: YOLOv11s localizer identifies optic disc bounding box (0.823 mean IoU on 1,197 test cases)</li>
+                <li>Stage 2: ViT-WaveCAM segments the optic disc boundary at 512×512 resolution</li>
+                <li>Stage 3: Disease classifier uses segmentation + vessel maps with Grad-CAM explanations</li>
+              </ul>
 
-          <article class="entry">
-            <h4>Graduate AI Researcher, USC Big Data in Bio-transport Centre</h4>
-            <p class="entry-meta">March 2025 - Present | Los Angeles, California</p>
-            <p>
-              Secured $50K seed funding for an early diabetes diagnostics pipeline using retinal
-              images. Trained Vision Transformer models reaching 97.3 Dice and 0.94 IoU, with SHAP
-              and Grad-CAM interpretability across clinical cases.
-            </p>
-          </article>
+              <div class="metrics-grid">
+                <div class="metric-card">
+                  <span class="metric-value">97.8%</span>
+                  <span class="metric-label">Dice (in-domain)</span>
+                </div>
+                <div class="metric-card">
+                  <span class="metric-value">94.3%</span>
+                  <span class="metric-label">Dice (cross-hospital)</span>
+                </div>
+                <div class="metric-card">
+                  <span class="metric-value">86.0%</span>
+                  <span class="metric-label">Disease classification</span>
+                </div>
+                <div class="metric-card">
+                  <span class="metric-value">6</span>
+                  <span class="metric-label">Datasets</span>
+                </div>
+              </div>
 
-          <article class="entry">
-            <h4>Machine Learning Systems Intern, Indian Oil Corporation Ltd.</h4>
-            <p class="entry-meta">June 2023 - October 2023 | Mumbai, India</p>
-            <p>
-              Built TensorFlow-based steel surface defect detection models reaching 99.2% accuracy,
-              improved CNN training efficiency, and integrated cloud-ready CI/CD workflows for
-              industrial deployment.
-            </p>
-          </article>
-        </section>
+              <p><strong>Training data:</strong> Combined three public retinal datasets (IDRiD, DRISHTI-GS, REFUGE) with 
+              different cameras, resolutions, and annotation styles. Tested generalization on three held-out datasets 
+              (DRIONS-DB, PAPILA, MESSIDOR) without any fine-tuning.</p>
 
-        <section class="portfolio-section" id="projects">
-          <h3>Selected Projects</h3>
+              <p><strong>Explainability:</strong> Beyond visual heatmaps, I built quantitative attribution metrics that 
+              measure how much the classifier relies on vessel regions vs. optic disc regions. On the FIVES dataset 
+              (4 disease classes, 200 test images), achieved 86.0% accuracy with interpretable per-class attribution patterns.</p>
 
-          <article class="entry">
-            <h4>GPU AI Workload Orchestrator</h4>
-            <p>
-              FastAPI control plane for GPU jobs with scheduling, worker health, retries, quarantine,
-              audit logs, Prometheus metrics, alerts, and Grafana observability.
-              <a href="https://github.com/ravi-kot/GPU-Orchestrator" target="_blank" rel="noreferrer">GitHub</a>
-            </p>
-          </article>
+              <p><strong>Loss function:</strong> Composite of Dice loss (region overlap), binary cross-entropy (pixel 
+              calibration), and boundary-aware loss (contour sensitivity). Boundary loss is ramped up after warmup to 
+              avoid destabilizing early training.</p>
 
-          <article class="entry">
-            <h4>GPU-Optimized Neural Reinforcement Learning</h4>
-            <p>
-              AlphaZero-style self-play pipeline using MCTS, a dual-head ResNet, replay buffers,
-              mixed precision, and batched GPU evaluation for scalable training.
-              <a href="https://github.com/ravi-kot/Neural-Network-Reinforcement-Learning-using-GPU-opitmization" target="_blank" rel="noreferrer">GitHub</a>
-            </p>
-          </article>
+              <p><strong>Limitations:</strong> Segmentation quality drops when the localizer crops poorly. The detector-to-segmenter 
+              handoff is a failure mode. Next step is joint optimization or confidence-aware cropping.</p>
+            </div>
+          </details>
 
-          <article class="entry">
-            <h4>Financial Risk Copilot</h4>
-            <p>
-              Neurosymbolic SEC filing intelligence pipeline for explainable financial risk alerts,
-              designed for traceable analysis and decision-ready reporting.
-              <a href="https://github.com/ravi-kot/financial-risk-copilot" target="_blank" rel="noreferrer">GitHub</a>
-            </p>
-          </article>
+          <div class="tech-tags">
+            <span>PyTorch</span>
+            <span>Vision Transformers</span>
+            <span>Medical Imaging</span>
+            <span>YOLO</span>
+            <span>Explainable AI</span>
+          </div>
+        </article>
 
-          <article class="entry">
-            <h4>High-Speed Cloud File Transfer Protocol</h4>
-            <p>
-              Hybrid UDP/TCP file transfer system improving throughput under high RTT and packet
-              loss using selective retransmission, caching, non-blocking sockets, and netem sweeps.
-              <a href="https://github.com/ravi-kot/High-Speed-Cloud-File-Transfer-" target="_blank" rel="noreferrer">GitHub</a>
-            </p>
-          </article>
-
-          <article class="entry">
-            <h4>TCP Congestion Control and Linux Kernel Optimization</h4>
-            <p>
-              Custom congestion-window experiments that improved throughput in high-latency,
-              high-loss environments with reproducible GCP, tc/netem, and iperf3 benchmarks.
-              <a href="https://github.com/ravi-kot/TCP-Congestion-Control-and-Linux-Kernel-Optimization" target="_blank" rel="noreferrer">GitHub</a>
-            </p>
-          </article>
-
-          <article class="entry">
-            <h4>AI Book Recommender</h4>
-            <p>
-              LLM recommender using LangChain, ChromaDB, OpenAI embeddings, sentiment analysis, and
-              Gradio deployment for fast semantic discovery across thousands of books.
-              <a href="https://github.com/ravi-kot/Book_Recommender_AI" target="_blank" rel="noreferrer">GitHub</a>
-            </p>
-          </article>
-
-          <article class="entry">
-            <h4>Image Super Resolution</h4>
-            <p>
-              Benchmarked CNNs, autoencoders, and GANs on DIV2K with PSNR, SSIM, perceptual quality,
-              and inference-time comparisons.
-              <a href="https://github.com/ravi-kot/Super-Resolution-Image-Transformation-using-Deep-Learning" target="_blank" rel="noreferrer">GitHub</a>
-            </p>
-          </article>
-
-          <article class="entry">
-            <h4>Alzheimer's Disease Prediction</h4>
-            <p>
-              Computer vision capstone detecting progressive Alzheimer's stages from MRI data with
-              AlexNet, CNN baselines, and classical ML comparisons.
-              <a href="https://github.com/ravi-kot/Alzheimer-s-Disease-prediction" target="_blank" rel="noreferrer">GitHub</a>
-            </p>
-          </article>
-        </section>
-
-        <section class="portfolio-section" id="more-work">
-          <h3>Additional Public Work</h3>
-          <p class="repo-list">
-            <a href="https://github.com/ravi-kot/BenchSight" target="_blank" rel="noreferrer">BenchSight</a>
-            <span>/</span>
-            <a href="https://github.com/ravi-kot/operator-profiler" target="_blank" rel="noreferrer">Operator Profiler</a>
-            <span>/</span>
-            <a href="https://github.com/ravi-kot/KAN_MedViT-" target="_blank" rel="noreferrer">KAN MedViT</a>
-            <span>/</span>
-            <a href="https://github.com/ravi-kot/AI-Revenue-Agent" target="_blank" rel="noreferrer">AI Revenue Agent</a>
-            <span>/</span>
-            <a href="https://github.com/ravi-kot/CUDA-Performance-Modelling-and-Micro-Benchmark-Suite-" target="_blank" rel="noreferrer">CUDA Performance Suite</a>
-            <span>/</span>
-            <a href="https://github.com/ravi-kot/High-Performance-General-Matrix-Multiplication-" target="_blank" rel="noreferrer">High-Performance GEMM</a>
-            <span>/</span>
-            <a href="https://github.com/ravi-kot/GenAI-Chatbot" target="_blank" rel="noreferrer">GenAI Chatbot</a>
+        <article class="experience">
+          <h4>ML Systems Intern — Industrial Defect Detection</h4>
+          <p class="experience-meta">Indian Oil Corporation Ltd. | June – October 2023 | Mumbai, India</p>
+          
+          <p class="experience-summary">
+            Built and deployed a computer vision system for automated steel surface quality inspection.
           </p>
-        </section>
 
-        <section class="portfolio-section" id="skills">
-          <h3>Skills</h3>
-          <p>
-            <strong>Languages:</strong> Python, C, C++, Java, SQL, R, Node.js, Django.
-          </p>
-          <p>
-            <strong>AI and ML:</strong> PyTorch, TensorFlow, Keras, Scikit-learn, OpenCV, NLP,
-            LangChain, LLM APIs, SHAP, Grad-CAM.
-          </p>
-          <p>
-            <strong>Systems:</strong> CUDA, cuDNN, TensorRT, ONNX Runtime, FastAPI, Docker, MLflow,
-            CI/CD, GitLab, Prometheus, Grafana.
-          </p>
-        </section>
+          <ul class="experience-bullets">
+            <li><strong>Problem:</strong> Manual inspection of steel surfaces was slow, inconsistent, and couldn't keep 
+            up with production volume. Quality issues were caught late, increasing waste and rework costs.</li>
+            <li><strong>What I built:</strong> An end-to-end defect detection pipeline — from image ingestion and 
+            preprocessing, through CNN-based classification, to a Tableau dashboard that tracked defect rates and 
+            triggered alerts for operators.</li>
+            <li><strong>Key result:</strong> 99.2% detection accuracy. Reduced manual inspection workload by 30% and 
+            cut defect response time by 25% through real-time dashboards.</li>
+            <li><strong>Why it matters:</strong> This wasn't a research prototype — it ran in production on actual 
+            manufacturing data, processing 50K+ quality records.</li>
+          </ul>
 
-        <section class="portfolio-section contact" id="contact">
-          <h3>Contact</h3>
-          <p>
-            I am open to research, engineering, and applied AI opportunities where careful systems
-            work can create measurable impact.
+          <details class="tech-details">
+            <summary>Technical Details</summary>
+            <div class="details-content">
+              <p><strong>Model:</strong> TensorFlow CNN trained on labeled defect images. Optimized training pipeline 
+              reduced convergence time by 35% through automated hyperparameter tuning and batch processing.</p>
+              
+              <p><strong>Deployment:</strong> Dockerized inference service integrated into existing quality control 
+              workflow. Built CI/CD pipeline for automated model validation before deployment updates.</p>
+
+              <p><strong>Monitoring:</strong> Tableau dashboards over 50K+ inspection records showing defect rates, 
+              trends, and anomalies. Reduced edge latency by 8% through preprocessing optimization.</p>
+
+              <p><strong>Stack:</strong> Python, TensorFlow, SQL for ETL, Docker for deployment, Tableau for visualization.</p>
+            </div>
+          </details>
+
+          <div class="tech-tags">
+            <span>TensorFlow</span>
+            <span>Docker</span>
+            <span>SQL/ETL</span>
+            <span>Tableau</span>
+            <span>CI/CD</span>
+          </div>
+        </article>
+      </section>
+
+      <section class="portfolio-section">
+        <h3>Projects</h3>
+
+        <article class="project">
+          <h4>GPU-Accelerated Deep Learning Inference Engine</h4>
+          <p class="project-summary">
+            Built a CUDA inference engine that runs CNN models 18× faster than CPU baselines.
           </p>
-          <p>
-            Email:
+          
+          <ul class="project-bullets">
+            <li><strong>Problem:</strong> Deep learning inference on CPU is too slow for real-time applications. 
+            Moving to GPU requires understanding memory hierarchies, kernel optimization, and avoiding bottlenecks.</li>
+            <li><strong>What I built:</strong> Custom CUDA kernels with cuDNN operation fusion and stream concurrency. 
+            Benchmarked against TensorRT and ONNX Runtime to understand compute-bound vs memory-bound regimes.</li>
+            <li><strong>Result:</strong> 18× speedup over CPU, 98% GPU utilization, 12.9 TFLOP/s peak throughput. 
+            Reduced L2 cache misses by 21% through profiler-guided block scheduling.</li>
+          </ul>
+
+          <details class="tech-details">
+            <summary>Technical Details</summary>
+            <div class="details-content">
+              <p><strong>Optimization approach:</strong> Used Nsight profiler and Intel VTune to identify bottlenecks. 
+              Key optimizations: operation fusion to reduce kernel launch overhead, stream concurrency for overlapping 
+              compute and memory transfers, block scheduling tweaks to improve cache locality.</p>
+              
+              <p><strong>Benchmarking:</strong> Compared custom CUDA kernels vs TensorRT vs ONNX Runtime on AWS GPU 
+              instances. Automated benchmark suite using Python + shell scripts for reproducible comparisons.</p>
+
+              <p><strong>Stack:</strong> CUDA, cuDNN, TensorRT, ONNX Runtime, PyTorch, Nsight Systems, AWS EC2 GPU instances.</p>
+            </div>
+          </details>
+
+          <div class="tech-tags">
+            <span>CUDA</span>
+            <span>cuDNN</span>
+            <span>TensorRT</span>
+            <span>ONNX</span>
+            <span>GPU Profiling</span>
+          </div>
+
+          <a href="https://github.com/ravi-kot/CUDA-Performance-Modelling-and-Micro-Benchmark-Suite-" target="_blank" rel="noreferrer" class="github-link">
+            View on GitHub
+          </a>
+        </article>
+
+        <article class="project">
+          <h4>AI Revenue Agent — Production Ad Ranking System</h4>
+          <p class="project-summary">
+            Built a real-time ad ranking system processing 40M+ impressions with live revenue scoring.
+          </p>
+          
+          <ul class="project-bullets">
+            <li><strong>Problem:</strong> Ad platforms need to predict which ads will generate revenue in real-time, 
+            at scale, with fast feedback loops when performance degrades.</li>
+            <li><strong>What I built:</strong> XGBoost + logistic regression ensemble for revenue scoring, served via 
+            FastAPI with Redis caching. Monitoring dashboards track CTR, ROI, and anomalies in real-time.</li>
+            <li><strong>Result:</strong> 74.1% AUC on revenue prediction. Sustained 1,500 requests/second. Cut incident 
+            response time by 60% through automated anomaly detection.</li>
+          </ul>
+
+          <details class="tech-details">
+            <summary>Technical Details</summary>
+            <div class="details-content">
+              <p><strong>Model:</strong> Two-stage ranking: XGBoost for feature-rich scoring, logistic regression for 
+              calibrated probabilities. Trained on 40M+ impression events with click and conversion labels.</p>
+              
+              <p><strong>Serving:</strong> FastAPI endpoints with Redis for caching frequent predictions. Docker 
+              containerization for deployment. Prometheus metrics with Grafana dashboards for monitoring.</p>
+
+              <p><strong>Monitoring:</strong> SQL/Pandas ETL pipelines feeding real-time dashboards. Automated alerts 
+              for CTR drops, revenue anomalies, and latency spikes.</p>
+
+              <p><strong>Stack:</strong> Python, XGBoost, scikit-learn, FastAPI, Redis, Docker, Prometheus, PostgreSQL.</p>
+            </div>
+          </details>
+
+          <div class="tech-tags">
+            <span>XGBoost</span>
+            <span>FastAPI</span>
+            <span>Redis</span>
+            <span>Docker</span>
+            <span>Real-time ML</span>
+          </div>
+
+          <a href="https://github.com/ravi-kot/AI-Revenue-Agent" target="_blank" rel="noreferrer" class="github-link">
+            View on GitHub
+          </a>
+        </article>
+
+        <article class="project">
+          <h4>Linux TCP Congestion Control — Kernel-Level Network Optimization</h4>
+          <p class="project-summary">
+            Modified Linux kernel TCP to achieve 160× throughput improvement under high packet loss.
+          </p>
+          
+          <ul class="project-bullets">
+            <li><strong>Problem:</strong> Standard TCP congestion control collapses under high latency and packet loss 
+            conditions common in cloud and mobile networks. Throughput drops from megabits to kilobits.</li>
+            <li><strong>What I built:</strong> Custom congestion window update policy in the Linux kernel. Built a 
+            reproducible testbed using tc/netem for network emulation and iperf3 for throughput measurement.</li>
+            <li><strong>Result:</strong> Improved throughput from 0.03 Mbps to 4.9 Mbps (160×) at 200ms RTT with 20% 
+            packet loss. Reduced loss-induced collapse by 42%.</li>
+          </ul>
+
+          <details class="tech-details">
+            <summary>Technical Details</summary>
+            <div class="details-content">
+              <p><strong>Approach:</strong> Analyzed how standard CUBIC congestion control behaves under loss. 
+              Implemented modified congestion window update with tuned beta parameter (beta=6) to be more aggressive 
+              in recovery while avoiding congestion collapse.</p>
+              
+              <p><strong>Testbed:</strong> Scripted tc/netem sweeps across 0-200ms RTT and 0-25% packet loss. 
+              30+ reproducible benchmarks on GCP instances. iperf3 for throughput measurement.</p>
+
+              <p><strong>Also built:</strong> Hybrid UDP/TCP file transfer protocol achieving 30% higher throughput 
+              than TCP-only under lossy conditions, using selective retransmission and adaptive rate control.</p>
+
+              <p><strong>Stack:</strong> C, Linux kernel, tc/netem, iperf3, GCP, shell scripting.</p>
+            </div>
+          </details>
+
+          <div class="tech-tags">
+            <span>Linux Kernel</span>
+            <span>TCP/IP</span>
+            <span>C</span>
+            <span>Network Systems</span>
+            <span>GCP</span>
+          </div>
+
+          <a href="https://github.com/ravi-kot/TCP-Congestion-Control-and-Linux-Kernel-Optimization" target="_blank" rel="noreferrer" class="github-link">
+            View on GitHub
+          </a>
+        </article>
+
+        <article class="project">
+          <h4>High-Performance Matrix Multiplication — CUDA Optimization</h4>
+          <p class="project-summary">
+            Implemented optimized GEMM kernels approaching cuBLAS performance through systematic optimization.
+          </p>
+          
+          <ul class="project-bullets">
+            <li><strong>Problem:</strong> Matrix multiplication is the core operation in deep learning. Understanding 
+            how to optimize it teaches GPU architecture, memory hierarchies, and performance engineering.</li>
+            <li><strong>What I built:</strong> Progressive CUDA GEMM implementations: naive → shared memory tiling → 
+            register blocking → vectorized loads. Benchmarked each optimization's impact.</li>
+            <li><strong>Result:</strong> Achieved significant speedups through each optimization stage. Final version 
+            approaches cuBLAS performance while being fully interpretable.</li>
+          </ul>
+
+          <details class="tech-details">
+            <summary>Technical Details</summary>
+            <div class="details-content">
+              <p><strong>Optimizations implemented:</strong></p>
+              <ul>
+                <li>Shared memory tiling to reduce global memory bandwidth</li>
+                <li>Register blocking to increase arithmetic intensity</li>
+                <li>Vectorized loads (float4) for memory coalescing</li>
+                <li>Bank conflict avoidance in shared memory</li>
+              </ul>
+              
+              <p><strong>Profiling:</strong> Used Nsight Compute to analyze memory throughput, occupancy, and 
+              instruction mix at each optimization stage.</p>
+
+              <p><strong>Stack:</strong> CUDA, Nsight Compute, cuBLAS (for baseline comparison).</p>
+            </div>
+          </details>
+
+          <div class="tech-tags">
+            <span>CUDA</span>
+            <span>GPU Architecture</span>
+            <span>Performance Engineering</span>
+          </div>
+
+          <a href="https://github.com/ravi-kot/High-Performance-General-Matrix-Multiplication-" target="_blank" rel="noreferrer" class="github-link">
+            View on GitHub
+          </a>
+        </article>
+      </section>
+
+      <section class="portfolio-section">
+        <h3>Other Work</h3>
+        <p class="other-work-intro">Earlier projects and explorations:</p>
+        <div class="other-work-grid">
+          <a href="https://github.com/ravi-kot/GPU-Orchestrator" target="_blank" rel="noreferrer" class="other-work-item">
+            <strong>GPU Job Orchestrator</strong>
+            <span>FastAPI control plane for GPU workload scheduling with Prometheus/Grafana observability</span>
+          </a>
+          <a href="https://github.com/ravi-kot/financial-risk-copilot" target="_blank" rel="noreferrer" class="other-work-item">
+            <strong>Financial Risk Copilot</strong>
+            <span>LLM-powered SEC filing analysis for explainable financial risk alerts</span>
+          </a>
+          <a href="https://github.com/ravi-kot/High-Speed-Cloud-File-Transfer-" target="_blank" rel="noreferrer" class="other-work-item">
+            <strong>Cloud File Transfer Protocol</strong>
+            <span>Hybrid UDP/TCP system with 30% throughput improvement under packet loss</span>
+          </a>
+          <a href="https://github.com/ravi-kot/Neural-Network-Reinforcement-Learning-using-GPU-opitmization" target="_blank" rel="noreferrer" class="other-work-item">
+            <strong>AlphaZero-Style RL</strong>
+            <span>GPU-optimized self-play pipeline with MCTS and mixed-precision training</span>
+          </a>
+          <a href="https://github.com/ravi-kot/operator-profiler" target="_blank" rel="noreferrer" class="other-work-item">
+            <strong>ML Operator Profiler</strong>
+            <span>Profiling tool for analyzing deep learning operator performance</span>
+          </a>
+          <a href="https://github.com/ravi-kot/BenchSight" target="_blank" rel="noreferrer" class="other-work-item">
+            <strong>BenchSight</strong>
+            <span>Benchmarking and visualization toolkit for ML experiments</span>
+          </a>
+        </div>
+      </section>
+
+      <section class="portfolio-section contact-section" id="contact">
+        <h3>Contact</h3>
+        <p class="contact-intro">
+          I'm interested in ML engineering, research engineering, and applied AI roles where I can work on 
+          systems that need to be reliable, fast, and interpretable. Open to full-time opportunities and 
+          research collaborations.
+        </p>
+        <div class="contact-grid">
+          <div class="contact-item">
+            <span class="contact-label">Email</span>
             <a href="mailto:ravikot0202@gmail.com">ravikot0202@gmail.com</a>
-            /
             <a href="mailto:rmkothar@usc.edu">rmkothar@usc.edu</a>
-          </p>
-          <p>
-            Links:
+          </div>
+          <div class="contact-item">
+            <span class="contact-label">Profiles</span>
             <a href="https://www.linkedin.com/in/ravi-kot/" target="_blank" rel="noreferrer">LinkedIn</a>
-            /
             <a href="https://github.com/ravi-kot" target="_blank" rel="noreferrer">GitHub</a>
-            /
             <a href="https://www.youtube.com/@RaviKothari-convergent" target="_blank" rel="noreferrer">YouTube</a>
-          </p>
-        </section>
-      </main>
-    </div>
-  </body>
+          </div>
+          <div class="contact-item">
+            <span class="contact-label">Location</span>
+            <span>Los Angeles, CA</span>
+          </div>
+        </div>
+      </section>
+
+      <footer class="portfolio-footer">
+        <p>© 2026 Ravi Kothari</p>
+      </footer>
+    </main>
+  </div>
+</body>
+
 </html>
