@@ -69,48 +69,52 @@
         <h3>Experience</h3>
 
         <article class="experience">
-          <h4>AI Research Engineer — Reliable Vision Classifiers</h4>
+          <h4>AI Research Engineer — Hallucination-Aware Vision Classifiers</h4>
           <p class="experience-meta">USC Information Sciences Institute | August 2025 – Present | Los Angeles, CA</p>
           
           <p class="experience-summary">
-            Building classifier systems that know when to say "I don't know" instead of forcing a wrong answer.
+            Building reliability-aware vision classifiers that reduce false accepts, detect unsupported predictions, 
+            and abstain when the model lacks enough evidence to make a trustworthy decision.
           </p>
 
           <ul class="experience-bullets">
-            <li><strong>Problem:</strong> Standard image classifiers always output a prediction, even when the input is 
-            ambiguous or unlike anything seen in training. This leads to confident but wrong answers.</li>
-            <li><strong>What I built:</strong> A support-aware classifier head that checks whether a prediction is backed 
-            by consistent evidence in the image embedding before committing to an answer. If the evidence is weak, the 
-            system rejects the prediction rather than guessing.</li>
-            <li><strong>Key result:</strong> On traffic sign classification, reduced false accepts on unseen inputs from 
-            16.14% to 0.37% while improving accuracy from 84.99% to 85.49%.</li>
-            <li><strong>Why it matters:</strong> In safety-critical applications like autonomous driving or medical diagnosis, 
-            a classifier that admits uncertainty is more useful than one that confidently guesses wrong.</li>
+            <li><strong>Problem:</strong> Standard image classifiers are usually forced to assign every input to one known class, 
+            even when the input is ambiguous, corrupted, or outside the training distribution. In production AI systems, this 
+            creates the visual equivalent of hallucination: a confident prediction without sufficient evidence.</li>
+            <li><strong>What I built:</strong> I developed a support-aware classifier head for closed-set computer vision. Instead 
+            of trusting only a standard neural-network classifier score, the system checks whether a prediction is supported by stable 
+            evidence patterns in the image embedding. When support is weak or the margin is unreliable, the model rejects the prediction 
+            rather than producing a high-confidence false accept.</li>
+            <li><strong>Key result:</strong> On traffic-sign classification with 12,630 test images and 43 classes, the method reduced 
+            false accepts on unseen inputs from 16.14% to 0.37% while improving top-1 accuracy from 84.99% to 85.49%.</li>
+            <li><strong>Why it matters:</strong> Modern AI systems increasingly trigger downstream actions through agents, automation pipelines, 
+            and decision-support workflows. In these settings, the risk is not only a wrong prediction. The larger risk is a confident wrong 
+            prediction that gets accepted and acted on. Reliability-aware classifiers are useful because they expose uncertainty before the 
+            error propagates into safety-critical, medical, or enterprise systems.</li>
           </ul>
 
           <details class="tech-details">
             <summary>Technical Details</summary>
             <div class="details-content">
-              <p><strong>Approach:</strong> Instead of training a standard neural network classifier head with gradient descent, 
-              I built a scoring system directly from frozen image embeddings. The method groups embedding dimensions that 
-              consistently activate together for each class, then checks whether a new input matches these patterns strongly 
-              enough to trust the prediction.</p>
+              <p><strong>Approach:</strong> I built the classifier head from frozen image embeddings rather than retraining a standard neural 
+              head with gradient descent. The method identifies groups of embedding dimensions that consistently support each class, stores 
+              class-specific evidence patterns, and compares each new input against those patterns before accepting a prediction.</p>
               
-              <p><strong>Deployment version:</strong> The full scoring method is interpretable but slow. I distilled it into 
-              a single matrix multiplication using closed-form ridge regression, making it as fast as a standard classifier 
-              while preserving the reliability behavior.</p>
+              <p><strong>Deployment version:</strong> The full evidence-scoring method is interpretable but more expensive than a standard 
+              classifier head. To make it deployable, I compressed the scoring behavior into a single matrix multiplication using closed-form 
+              regression. This preserves the support-aware behavior while making inference comparable to a standard neural classifier head.</p>
 
               <div class="metrics-grid">
                 <div class="metric-card">
                   <span class="metric-value">96.08%</span>
-                  <span class="metric-label">Accuracy (Caltech101)</span>
+                  <span class="metric-label">Accuracy (101-class)</span>
                 </div>
                 <div class="metric-card">
                   <span class="metric-value">0.37%</span>
                   <span class="metric-label">False Accept Rate</span>
                 </div>
                 <div class="metric-card">
-                  <span class="metric-value">1.08×</span>
+                  <span class="metric-value">1.08x</span>
                   <span class="metric-label">Faster than baseline</span>
                 </div>
                 <div class="metric-card">
@@ -119,20 +123,20 @@
                 </div>
               </div>
 
-              <p><strong>Datasets:</strong> Evaluated on Caltech101 (101 object categories, 867 test images), GTSRB (German 
-              traffic signs, 12,630 test images, 43 classes), FGVC-Aircraft (aircraft variants, 3,333 test images), and 
-              CIFAR-100 (100 object classes, 10,000 test images).</p>
+              <p><strong>Datasets:</strong> Evaluated on a 101-class object benchmark with 867 test images, a German traffic-sign benchmark 
+              with 12,630 test images and 43 classes, an aircraft-variant benchmark with 3,333 test images, and a 100-class object benchmark 
+              with 10,000 test images.</p>
 
-              <p><strong>Evaluation metrics:</strong> Top-1 accuracy, accepted-wrong count at 95% coverage, false positive 
-              rate on out-of-distribution inputs (FPR95), area under risk-coverage curve, head latency, and memory footprint.</p>
+              <p><strong>Evaluation:</strong> Measured top-1 accuracy, accepted-wrong count at 95% coverage, false positive rate on 
+              out-of-distribution inputs, risk-coverage behavior, head latency, throughput, and model-memory footprint.</p>
 
-              <p><strong>Engineering:</strong> Built Python evaluation pipelines with validation-calibrated thresholds. 
-              Exported C/CUDA inference runtimes for reproducible benchmarking. Created interactive dashboard for 
-              comparing predictions between standard and support-aware classifiers.</p>
+              <p><strong>Engineering:</strong> Built Python evaluation pipelines with validation-calibrated reliability thresholds. Exported 
+              C/CUDA inference runtimes for reproducible benchmarking. Created an interactive dashboard to compare standard neural classifiers 
+              against support-aware training-free classifier heads.</p>
 
-              <p><strong>Limitations:</strong> The method works best when the backbone produces well-separated embeddings. 
-              On CIFAR-100 where embeddings overlap more, gains were smaller. Next step is integrating reliability scores 
-              into backbone fine-tuning.</p>
+              <p><strong>Limitations:</strong> The method performs best when the frozen vision backbone produces well-separated embeddings. 
+              On harder datasets with overlapping class structure, the gains were smaller. The next step is integrating reliability scores 
+              into backbone fine-tuning and agent-facing decision policies.</p>
             </div>
           </details>
 
@@ -176,7 +180,7 @@
               <p><strong>Pipeline stages:</strong></p>
               <ul>
                 <li>Stage 1: YOLOv11s localizer identifies optic disc bounding box (0.823 mean IoU on 1,197 test cases)</li>
-                <li>Stage 2: ViT-WaveCAM segments the optic disc boundary at 512×512 resolution</li>
+                <li>Stage 2: ViT-WaveCAM segments the optic disc boundary at 512x512 resolution</li>
                 <li>Stage 3: Disease classifier uses segmentation + vessel maps with Grad-CAM explanations</li>
               </ul>
 
@@ -277,7 +281,7 @@
         <article class="project">
           <h4>GPU-Accelerated Deep Learning Inference Engine</h4>
           <p class="project-summary">
-            Built a CUDA inference engine that runs CNN models 18× faster than CPU baselines.
+            Built a CUDA inference engine that runs CNN models 18x faster than CPU baselines.
           </p>
           
           <ul class="project-bullets">
@@ -285,7 +289,7 @@
             Moving to GPU requires understanding memory hierarchies, kernel optimization, and avoiding bottlenecks.</li>
             <li><strong>What I built:</strong> Custom CUDA kernels with cuDNN operation fusion and stream concurrency. 
             Benchmarked against TensorRT and ONNX Runtime to understand compute-bound vs memory-bound regimes.</li>
-            <li><strong>Result:</strong> 18× speedup over CPU, 98% GPU utilization, 12.9 TFLOP/s peak throughput. 
+            <li><strong>Result:</strong> 18x speedup over CPU, 98% GPU utilization, 12.9 TFLOP/s peak throughput. 
             Reduced L2 cache misses by 21% through profiler-guided block scheduling.</li>
           </ul>
 
@@ -363,7 +367,7 @@
         <article class="project">
           <h4>Linux TCP Congestion Control — Kernel-Level Network Optimization</h4>
           <p class="project-summary">
-            Modified Linux kernel TCP to achieve 160× throughput improvement under high packet loss.
+            Modified Linux kernel TCP to achieve 160x throughput improvement under high packet loss.
           </p>
           
           <ul class="project-bullets">
@@ -371,7 +375,7 @@
             conditions common in cloud and mobile networks. Throughput drops from megabits to kilobits.</li>
             <li><strong>What I built:</strong> Custom congestion window update policy in the Linux kernel. Built a 
             reproducible testbed using tc/netem for network emulation and iperf3 for throughput measurement.</li>
-            <li><strong>Result:</strong> Improved throughput from 0.03 Mbps to 4.9 Mbps (160×) at 200ms RTT with 20% 
+            <li><strong>Result:</strong> Improved throughput from 0.03 Mbps to 4.9 Mbps (160x) at 200ms RTT with 20% 
             packet loss. Reduced loss-induced collapse by 42%.</li>
           </ul>
 
@@ -414,8 +418,8 @@
           <ul class="project-bullets">
             <li><strong>Problem:</strong> Matrix multiplication is the core operation in deep learning. Understanding 
             how to optimize it teaches GPU architecture, memory hierarchies, and performance engineering.</li>
-            <li><strong>What I built:</strong> Progressive CUDA GEMM implementations: naive → shared memory tiling → 
-            register blocking → vectorized loads. Benchmarked each optimization's impact.</li>
+            <li><strong>What I built:</strong> Progressive CUDA GEMM implementations: naive -> shared memory tiling -> 
+            register blocking -> vectorized loads. Benchmarked each optimization's impact.</li>
             <li><strong>Result:</strong> Achieved significant speedups through each optimization stage. Final version 
             approaches cuBLAS performance while being fully interpretable.</li>
           </ul>
