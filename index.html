@@ -69,12 +69,12 @@
         <h3>Experience</h3>
 
         <article class="experience">
-          <h4>AI Research Engineer — Hallucination-Aware Vision Classifiers</h4>
+          <h4>AI Research Engineer — Support-Aware Vision Classifiers</h4>
           <p class="experience-meta">USC Information Sciences Institute | August 2025 – Present | Los Angeles, CA</p>
           
           <p class="experience-summary">
-            Building reliability-aware vision classifiers that reduce false accepts, detect unsupported predictions, 
-            and abstain when the model lacks enough evidence to make a trustworthy decision.
+            Building reliability-aware computer vision systems that reduce false accepts, detect unsupported predictions, 
+            and abstain before unreliable decisions propagate downstream.
           </p>
 
           <ul class="experience-bullets">
@@ -83,14 +83,14 @@
             creates the visual equivalent of hallucination: a confident prediction without sufficient evidence.</li>
             <li><strong>What I built:</strong> I developed a support-aware classifier head for closed-set computer vision. Instead 
             of trusting only a standard neural-network classifier score, the system checks whether a prediction is supported by stable 
-            evidence patterns in the image embedding. When support is weak or the margin is unreliable, the model rejects the prediction 
-            rather than producing a high-confidence false accept.</li>
-            <li><strong>Key result:</strong> On traffic-sign classification with 12,630 test images and 43 classes, the method reduced 
-            false accepts on unseen inputs from 16.14% to 0.37% while improving top-1 accuracy from 84.99% to 85.49%.</li>
-            <li><strong>Why it matters:</strong> Modern AI systems increasingly trigger downstream actions through agents, automation pipelines, 
-            and decision-support workflows. In these settings, the risk is not only a wrong prediction. The larger risk is a confident wrong 
-            prediction that gets accepted and acted on. Reliability-aware classifiers are useful because they expose uncertainty before the 
-            error propagates into safety-critical, medical, or enterprise systems.</li>
+            evidence patterns in the image embedding. When support is weak or the prediction margin is unreliable, the model rejects 
+            the prediction rather than producing a high-confidence false accept.</li>
+            <li><strong>Key result:</strong> Reduced false accepts on out-of-distribution inputs from 16.14% to 0.37% while improving 
+            traffic-sign classification accuracy from 84.99% to 85.49%.</li>
+            <li><strong>Why it matters:</strong> Modern AI systems increasingly connect model predictions to automation, monitoring, 
+            and decision-support workflows. In these settings, the risk is not only a wrong prediction, but a confident wrong prediction 
+            that gets accepted and acted on. Reliability-aware classifiers expose uncertainty before errors propagate into safety-critical, 
+            medical, or enterprise systems.</li>
           </ul>
 
           <details class="tech-details">
